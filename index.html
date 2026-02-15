@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>William H. "Bill" Barfield — Trial Attorney | Porter Law Firm</title>
+<meta name="description" content="Board-certified trial attorney with 20+ years of construction defect litigation experience. Managing Partner of Litigation at Porter Law Firm, Houston & Austin, TX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --color-navy: #0a1628;
+  --color-navy-light: #111f3a;
+  --color-charcoal: #1a2332;
+  --color-slate: #2a3a52;
+  --color-gold: #c9a84c;
+  --color-gold-light: #dfc06a;
+  --color-gold-dim: rgba(201, 168, 76, 0.15);
+  --color-cream: #f0ead6;
+  --color-white: #e8e4da;
+  --color-muted: #8a95a8;
+  --color-surface: #0e1a2e;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── Utility ── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.gold-rule {
+  width: 60px;
+  height: 2px;
+  background: var(--color-gold);
+  border: none;
+  margin: var(--space-sm) 0;
+}
+
+.gold-rule--center { margin: var(--space-sm) auto; }
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-xs);
+}
+
+/* ── Navigation ── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.25rem 0;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav.scrolled {
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(201, 168, 76, 0.1);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+.nav-links { display: flex; gap: var(--space-md); list-style: none; }
+
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--color-gold); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--color-gold); margin: 5px 0; transition: all 0.3s; }
+
+/* ── Hero ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.3s forwards;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--color-cream);
+  margin-bottom: var(--space-sm);
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.5s forwards;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--color-gold);
+  font-weight: 400;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: var(--color-muted);
+  max-width: 540px;
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.7s forwards;
+}
+
+.hero-meta {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.9s forwards;
+}
+
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hero-meta-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.hero-meta-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* ── About ── */
+.about {
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.about h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--color-cream);
+  margin-bottom: var(--space-md);
+}
+
+.about p {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-sm);
+}
+
+.about p strong { color: var(--color-cream); font-weight: 600; }
+
+.credentials-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.credentials-list li {
+  padding: 1.25rem 1.5rem;
+  background: var(--color-navy-light);
+  border-left: 2px solid var(--color-gold);
+  font-size: 0.95rem;
+  color: var(--color-white);
+  transition: background 0.3s ease;
+}
+
+.credentials-list li:hover {
+  background: var(--color-charcoal);
+}
+
+.credentials-list li .cred-title {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.credentials-list li .cred-detail {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* ── Practice Areas ── */
+.practice {
+  padding: var(--space-xl) 0;
+  background: var(--color-surface);
+  position: relative;
+}
+
+.practice::before,
+.practice::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent);
+}
+
+.practice::before { top: 0; }
+.practice::after { bottom: 0; }
+
+.practice h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: var(--color-cream);
+  margin-bottom: var(--space-lg);
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.practice-card {
+  padding: var(--space-md);
+  background: var(--color-navy);
+  border: 1px solid rgba(201,168,76,0.08);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.practice-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  transform: translateY(-2px);
+}
+
+.practice-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.practice-card:hover::before { transform: scaleX(1); }
+
+.practice-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--space-sm);
+  color: var(--color-gold);
+}
+
+.practice-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-cream);
+  margin-bottom: 0.75rem;
+}
+
+.practice-card p {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+/* ── Recognition ── */
+.recognition {
+  padding: var(--space-xl) 0;
+}
+
+.recognition h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: var(--color-cream);
+  margin-bottom: var(--space-lg);
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.award-card {
+  text-align: center;
+  padding: var(--space-md) var(--space-sm);
+  background: var(--color-navy-light);
+  border: 1px solid rgba(201,168,76,0.06);
+  transition: border-color 0.3s;
+}
+
+.award-card:hover { border-color: rgba(201,168,76,0.2); }
+
+.award-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--space-sm);
+  color: var(--color-gold);
+}
+
+.award-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-cream);
+  margin-bottom: 0.5rem;
+}
+
+.award-card p {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+/* ── Education ── */
+.education {
+  padding: var(--space-xl) 0;
+  background: var(--color-surface);
+  position: relative;
+}
+
+.education::before,
+.education::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent);
+}
+
+.education::before { top: 0; }
+.education::after { bottom: 0; }
+
+.education h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: var(--color-cream);
+  margin-bottom: var(--space-lg);
+}
+
+.edu-timeline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.edu-item {
+  padding: 1.5rem;
+  border-left: 2px solid var(--color-gold);
+  position: relative;
+}
+
+.edu-item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 1.75rem;
+  width: 8px;
+  height: 8px;
+  background: var(--color-gold);
+  border-radius: 50%;
+}
+
+.edu-degree {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-cream);
+  margin-bottom: 0.25rem;
+}
+
+.edu-school {
+  font-size: 0.95rem;
+  color: var(--color-gold);
+  margin-bottom: 0.25rem;
+}
+
+.edu-detail {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* ── Contact ── */
+.contact {
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.contact h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: var(--color-cream);
+  margin-bottom: var(--space-sm);
+}
+
+.contact p {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  max-width: 500px;
+  margin: 0 auto var(--space-md);
+  line-height: 1.7;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+}
+
+.contact-item {
+  text-align: center;
+}
+
+.contact-item .label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.contact-item a, .contact-item .value {
+  color: var(--color-cream);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.contact-item a:hover { color: var(--color-gold); }
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+/* ── Footer ── */
+footer {
+  padding: var(--space-md) 0;
+  border-top: 1px solid rgba(201,168,76,0.1);
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .practice-grid { grid-template-columns: 1fr 1fr; }
+  .awards-grid { grid-template-columns: 1fr 1fr; }
+  .edu-timeline { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10, 22, 40, 0.98);
+    padding: var(--space-md);
+    gap: var(--space-sm);
+  }
+  .nav-toggle { display: block; }
+  .practice-grid { grid-template-columns: 1fr; }
+  .awards-grid { grid-template-columns: 1fr; }
+  .hero-meta { gap: var(--space-md); }
+  .contact-details { flex-direction: column; gap: var(--space-md); }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <a href="#" class="nav-name">WH Barfield</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#practice">Practice</a></li>
+      <li><a href="#recognition">Recognition</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-content">
+    <p class="hero-eyebrow">Managing Partner of Litigation</p>
+    <h1>William H.<br><em>Bill</em> Barfield</h1>
+    <p class="hero-subtitle">Board-certified trial attorney with over two decades defending property owners and developers in high-stakes construction defect litigation across Texas.</p>
+    <hr class="gold-rule" style="margin-bottom: 2rem;">
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-value">20+</span>
+        <span class="hero-meta-label">Years of Practice</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-value">6×</span>
+        <span class="hero-meta-label">Texas Super Lawyer</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-value">AV</span>
+        <span class="hero-meta-label">Preeminent Rated</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div>
+        <p class="section-label">About</p>
+        <h2>Tried in the courtroom. Trusted in the boardroom.</h2>
+        <hr class="gold-rule">
+        <p>Bill Barfield serves as the <strong>Managing Partner of Litigation at Porter Law Firm</strong>, leading a team of attorneys from the firm's Houston and Austin offices. His practice centers on <strong>construction defect litigation</strong>, where he represents developers, general contractors, subcontractors, and property owners in complex disputes involving residential and commercial properties.</p>
+        <p>With a rare combination of legal expertise and business acumen — holding an <strong>MBA alongside dual Master of Laws degrees</strong> — Bill brings a strategic, results-driven approach to every case. His clients rely on him not just to litigate, but to find the most efficient path to resolution.</p>
+      </div>
+      <div>
+        <p class="section-label">Credentials</p>
+        <ul class="credentials-list">
+          <li>
+            <span class="cred-title">Board Certified — Personal Injury Trial Law</span>
+            <span class="cred-detail">Texas Board of Legal Specialization</span>
+          </li>
+          <li>
+            <span class="cred-title">AV Preeminent Rating</span>
+            <span class="cred-detail">Martindale-Hubbell — Highest ethical & professional standard</span>
+          </li>
+          <li>
+            <span class="cred-title">Texas Super Lawyer</span>
+            <span class="cred-detail">Thomson Reuters — Six consecutive years (2020–2025)</span>
+          </li>
+          <li>
+            <span class="cred-title">Best Lawyers in America</span>
+            <span class="cred-detail">Nationally recognized peer-review distinction</span>
+          </li>
+          <li>
+            <span class="cred-title">2026 Best Law Firms</span>
+            <span class="cred-detail">U.S. News & World Report — Porter Law Firm</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Practice Areas -->
+<section class="practice" id="practice">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Practice Areas</p>
+      <h2>Focused expertise, <br>decisive results.</h2>
+      <hr class="gold-rule" style="margin-bottom: 3rem;">
+    </div>
+    <div class="practice-grid">
+      <div class="practice-card reveal">
+        <svg class="practice-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="4" y="14" width="32" height="22" rx="1"/><path d="M4 20h32"/><path d="M14 4v10"/><path d="M26 4v10"/><path d="M14 4h12"/>
+        </svg>
+        <h3>Construction Defect Litigation</h3>
+        <p>Comprehensive defense and prosecution of claims involving structural failures, water intrusion, foundation issues, and building envelope defects in residential and commercial properties.</p>
+      </div>
+      <div class="practice-card reveal">
+        <svg class="practice-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="20" cy="20" r="16"/><path d="M20 10v10l7 7"/>
+        </svg>
+        <h3>Commercial Litigation</h3>
+        <p>Complex business disputes including breach of contract, partnership disputes, and commercial real estate litigation — leveraging both legal expertise and MBA-level business analysis.</p>
+      </div>
+      <div class="practice-card reveal">
+        <svg class="practice-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 36V10l14-6 14 6v26"/><path d="M6 10h28"/><rect x="12" y="16" width="6" height="8"/><rect x="22" y="16" width="6" height="8"/><rect x="16" y="28" width="8" height="8"/>
+        </svg>
+        <h3>Real Estate Disputes</h3>
+        <p>Resolving conflicts involving property transactions, title disputes, easements, and development agreements across Texas markets.</p>
+      </div>
+      <div class="practice-card reveal">
+        <svg class="practice-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M8 32h24"/><path d="M20 8v24"/><path d="M8 8h24v24H8z"/>
+        </svg>
+        <h3>HOA & POA Disputes</h3>
+        <p>Representing homeowners associations, property owners associations, and individual owners in governance, assessment, and covenant enforcement matters.</p>
+      </div>
+      <div class="practice-card reveal">
+        <svg class="practice-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 8h16v24H12z"/><path d="M16 14h8"/><path d="M16 20h8"/><path d="M16 26h4"/>
+        </svg>
+        <h3>Insurance Coverage</h3>
+        <p>Navigating complex insurance coverage disputes in construction and property damage claims, ensuring clients receive the protection their policies provide.</p>
+      </div>
+      <div class="practice-card reveal">
+        <svg class="practice-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="20" cy="14" r="8"/><path d="M6 36c0-8 6-14 14-14s14 6 14 14"/>
+        </svg>
+        <h3>Personal Injury</h3>
+        <p>Board-certified trial expertise applied to serious injury cases, with the courtroom experience and preparation that insurance companies take seriously.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recognition -->
+<section class="recognition" id="recognition">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Recognition</p>
+      <h2>Recognized by peers.<br>Trusted by clients.</h2>
+      <hr class="gold-rule" style="margin-bottom: 3rem;">
+    </div>
+    <div class="awards-grid">
+      <div class="award-card reveal">
+        <svg class="award-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M24 4l5.5 11.2L42 17l-9 8.8L35 38 24 32.2 13 38l2-12.2L6 17l12.5-1.8z"/>
+        </svg>
+        <h3>Texas Super Lawyer</h3>
+        <p>Six consecutive years<br>2020 — 2025</p>
+      </div>
+      <div class="award-card reveal">
+        <svg class="award-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="8" y="6" width="32" height="36" rx="2"/><path d="M16 16h16"/><path d="M16 24h16"/><path d="M16 32h10"/>
+        </svg>
+        <h3>Board Certified</h3>
+        <p>Personal Injury Trial Law<br>Texas Board of Legal Specialization</p>
+      </div>
+      <div class="award-card reveal">
+        <svg class="award-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="24" cy="24" r="18"/><path d="M24 14v10l6 6"/>
+        </svg>
+        <h3>AV Preeminent</h3>
+        <p>Martindale-Hubbell<br>Highest Rating</p>
+      </div>
+      <div class="award-card reveal">
+        <svg class="award-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M14 42V20l10-14 10 14v22"/><path d="M14 28h20"/><path d="M20 42v-8h8v8"/>
+        </svg>
+        <h3>Best Lawyers</h3>
+        <p>Best Lawyers in America<br>Best Law Firms 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section class="education" id="education">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Education</p>
+      <h2>An uncommon foundation.</h2>
+      <hr class="gold-rule" style="margin-bottom: 3rem;">
+    </div>
+    <div class="edu-timeline">
+      <div class="edu-item reveal">
+        <p class="edu-degree">LL.M. in Energy, Environment & Natural Resources</p>
+        <p class="edu-school">University of Houston Law Center</p>
+      </div>
+      <div class="edu-item reveal">
+        <p class="edu-degree">LL.M. in Intellectual Property & Information Law</p>
+        <p class="edu-school">University of Houston Law Center</p>
+      </div>
+      <div class="edu-item reveal">
+        <p class="edu-degree">Juris Doctor</p>
+        <p class="edu-school">South Texas College of Law Houston</p>
+      </div>
+      <div class="edu-item reveal">
+        <p class="edu-degree">Master of Business Administration</p>
+        <p class="edu-school">Texas Tech University</p>
+      </div>
+      <div class="edu-item reveal">
+        <p class="edu-degree">Bachelor of Business Administration</p>
+        <p class="edu-school">Texas Tech University</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="container reveal">
+    <p class="section-label">Contact</p>
+    <h2>Let's discuss your case.</h2>
+    <hr class="gold-rule gold-rule--center">
+    <p>Whether you're facing a construction defect claim or need strategic litigation counsel, Bill is ready to help.</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <p class="label">Firm</p>
+        <a href="https://www.porterfirm.com" target="_blank">Porter Law Firm</a>
+      </div>
+      <div class="contact-item">
+        <p class="label">Offices</p>
+        <p class="value">Houston & Austin, TX</p>
+      </div>
+      <div class="contact-item">
+        <p class="label">Profile</p>
+        <a href="https://www.porterfirm.com/attorney/barfield-william-h-bill/" target="_blank">View on PorterFirm.com</a>
+      </div>
+    </div>
+    <a href="https://www.porterfirm.com/attorney/barfield-william-h-bill/" target="_blank" class="cta-button">Get In Touch</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 William H. Barfield. All rights reserved. | Porter Law Firm</p>
+  </div>
+</footer>
+
+<script>
+// Scroll-triggered nav
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
